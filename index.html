@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vocabulary Practice: ২৩ সেকশন</title>
+<style>
+:root{--bg:#f6f7fb;--c:#fff;--t:#1a1a2e;--m:#667;--b:#dde;--ok:#1a9a50;--no:#d33;--p:#c8102e}
+@media(prefers-color-scheme:dark){:root{--bg:#14141c;--c:#1f1f2b;--t:#eee;--m:#aab;--b:#38384a;--ok:#4cd98a;--no:#ff6b6b;--p:#ff5a73}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.6 system-ui,sans-serif;padding:12px}
+h1{font-size:20px;text-align:center;margin:8px 0}
+#sc{position:sticky;top:0;background:var(--p);color:#fff;text-align:center;padding:8px;border-radius:10px;margin-bottom:12px;font-weight:600;z-index:5}
+.sec{background:var(--c);border:1px solid var(--b);border-radius:14px;padding:14px;margin-bottom:16px}
+.sec h2{margin:0 0 4px;font-size:18px;color:var(--p)}
+.wl{font-size:13px;color:var(--m);margin-bottom:8px}
+.q{border-top:1px solid var(--b);padding:10px 0}
+.s{font-weight:600}
+.o{display:block;width:100%;text-align:left;margin:6px 0;padding:10px;border:1px solid var(--b);border-radius:10px;background:transparent;color:var(--t);font:inherit}
+.o small{color:var(--m);display:none}
+.done .o small{display:inline}
+.o.ok{border-color:var(--ok);background:rgba(40,180,90,.15)}
+.o.no{border-color:var(--no);background:rgba(220,50,50,.15)}
+.tr{display:none;color:var(--m);font-size:14px}
+.done .tr{display:block}
+</style></head><body>
+<h1>Vocabulary Practice</h1>
+<div id="sc">সঠিক: 0 / 0</div>
+<div id="app"></div>
+<script>
+const D=[
+["abate:কমে যাওয়া;extol:উচ্চ প্রশংসা করা;abstemious:মিতাচারী;aberrant:বিপথগামী",[[0,"The storm began to __ after midnight.","মধ্যরাতের পর ঝড় কমতে শুরু করল।"],[1,"Critics __ the actor for his brilliant performance.","সমালোচকরা অভিনেতার দুর্দান্ত অভিনয়ের উচ্চ প্রশংসা করলেন।"]]],
+["placate:শান্ত করা;exacerbate:আরও খারাপ করা;rapport:সুসম্পর্ক;ambiguous:দ্ব্যর্থক",[[1,"Skipping treatment will only __ your illness.","চিকিৎসা বাদ দিলে অসুখ কেবল আরও খারাপ হবে।"],[2,"The teacher built a good __ with her students.","শিক্ষিকা ছাত্রদের সাথে সুসম্পর্ক গড়ে তুললেন।"]]],
+["arduous:কষ্টসাধ্য;austere:কঠোর/সাদাসিধে;audacious:দুঃসাহসী;banal:গতানুগতিক",[[0,"Climbing the mountain was an __ journey.","পাহাড়ে চড়া ছিল এক কষ্টসাধ্য যাত্রা।"],[3,"The plot was so __ that I fell asleep.","গল্পটি এত গতানুগতিক ছিল যে আমি ঘুমিয়ে পড়লাম।"]]],
+["burgeon:দ্রুত বাড়া;capricious:খামখেয়ালি;caustic:তীক্ষ্ণ বিদ্রূপাত্মক;clandestine:গোপন",[[0,"Small businesses began to __ in the city.","শহরে ছোট ব্যবসা দ্রুত বাড়তে লাগল।"],[3,"They held a __ meeting at midnight.","তারা মধ্যরাতে এক গোপন বৈঠক করল।"]]],
+["cogent:যুক্তিসংগত;contrite:অনুতপ্ত;conundrum:ধাঁধা;condone:মেনে নেওয়া",[[0,"She gave a __ argument that convinced everyone.","সে এমন যুক্তিসংগত বক্তব্য দিল যা সবাইকে বোঝাল।"],[1,"The __ boy apologised to his mother.","অনুতপ্ত ছেলেটি মায়ের কাছে ক্ষমা চাইল।"]]],
+["daunt:ভয় দেখানো;denigrate:হেয় করা;diatribe:তীব্র আক্রমণাত্মক বক্তৃতা;digression:প্রসঙ্গান্তর",[[1,"Do not __ others to make yourself look better.","নিজেকে ভালো দেখাতে অন্যকে হেয় করো না।"],[3,"His long __ about football bored the audience.","ফুটবল নিয়ে তার দীর্ঘ প্রসঙ্গান্তর শ্রোতাদের বিরক্ত করল।"]]],
+["disparage:ছোট করে দেখা;divulge:ফাঁস করা;disingenuous:কপট;cacophony:কর্কশ শব্দ",[[1,"He promised not to __ the secret to anyone.","সে কাউকে গোপন কথা ফাঁস না করার প্রতিজ্ঞা করল।"],[3,"A __ of car horns filled the street.","গাড়ির হর্নের কর্কশ শব্দে রাস্তা ভরে গেল।"]]],
+["dogmatic:গোঁড়া;eclectic:নানা উৎস থেকে নেওয়া;ebullient:উচ্ছ্বসিত;distill:পরিশোধন করা",[[2,"The __ crowd cheered loudly after the win.","জয়ের পর উচ্ছ্বসিত জনতা জোরে চিৎকার করল।"],[0,"He is too __ to listen to new ideas.","সে এত গোঁড়া যে নতুন ধারণা শোনে না।"]]],
+["ephemeral:ক্ষণস্থায়ী;erudite:বিদ্বান;embellish:অলংকৃত করা;equanimity:মানসিক স্থিরতা",[[0,"Fame can be __ and soon fade away.","খ্যাতি ক্ষণস্থায়ী হতে পারে এবং দ্রুত মিলিয়ে যায়।"],[3,"She faced the bad news with calm __.","সে শান্ত স্থিরতার সাথে খারাপ খবরের মুখোমুখি হলো।"]]],
+["exonerate:দায়মুক্ত করা;facetious:রসিকতাপূর্ণ;fallacious:ভ্রান্ত;fervor:উদ্দীপনা",[[0,"New evidence helped to __ the accused man.","নতুন প্রমাণ অভিযুক্ত ব্যক্তিকে দায়মুক্ত করতে সাহায্য করল।"],[2,"His __ claim was soon proved false.","তার ভ্রান্ত দাবি শীঘ্রই মিথ্যা প্রমাণিত হলো।"]]],
+["flout:অমান্য করা;forestall:আগেভাগে ঠেকানো;frugality:মিতব্যয়িতা;harangue:দীর্ঘ তিরস্কার",[[0,"Drivers who __ traffic rules face heavy fines.","যেসব চালক ট্রাফিক আইন অমান্য করে তারা বড় জরিমানা পায়।"],[2,"Her __ helped her save money every month.","তার মিতব্যয়িতা প্রতি মাসে টাকা জমাতে সাহায্য করত।"]]],
+["impeccable:নিখুঁত;imperturbable:অবিচলিত;implacable:আপসহীন;impede:বাধা দেওয়া",[[0,"He always speaks with __ manners.","সে সবসময় নিখুঁত আদবের সাথে কথা বলে।"],[3,"Heavy rain can __ our progress.","ভারী বৃষ্টি আমাদের অগ্রগতিতে বাধা দিতে পারে।"]]],
+["implicit:অন্তর্নিহিত;implode:ভেতরের দিকে ভেঙে পড়া;incongruous:বেমানান;preposterous:উদ্ভট",[[2,"His casual dress looked __ at the formal event.","আনুষ্ঠানিক অনুষ্ঠানে তার সাধারণ পোশাক বেমানান লাগছিল।"],[3,"The idea of walking to the moon is __.","হেঁটে চাঁদে যাওয়ার ধারণাটি উদ্ভট।"]]],
+["insinuate:ইঙ্গিত করা;infringe:লঙ্ঘন করা;inundate:প্লাবিত করা;inured:অভ্যস্ত",[[2,"Floodwater began to __ the village.","বন্যার পানি গ্রামটিকে প্লাবিত করতে শুরু করল।"],[3,"Doctors become __ to the sight of blood.","ডাক্তাররা রক্ত দেখতে অভ্যস্ত হয়ে যান।"]]],
+["laud:প্রশংসা করা;lucid:স্পষ্ট বোধগম্য;languid:নিস্তেজ;jeer:বিদ্রূপ করা",[[0,"The mayor was __ for his honesty.","মেয়র তার সততার জন্য প্রশংসিত হলেন।"],[1,"The teacher gave a __ explanation of the topic.","শিক্ষক বিষয়টির স্পষ্ট ব্যাখ্যা দিলেন।"]]],
+["meticulous:অতি সতর্ক;mundane:সাধারণ/জাগতিক;malleable:নমনীয়;magnanimity:উদারতা",[[0,"He is __ about checking every detail.","সে প্রতিটি খুঁটিনাটি যাচাই করতে অতি সতর্ক।"],[3,"The king showed __ by forgiving his enemies.","রাজা শত্রুদের ক্ষমা করে উদারতা দেখালেন।"]]],
+["obsequious:তোষামুদে;onerous:কষ্টকর/বোঝাস্বরূপ;ostentatious:জাঁকজমকপূর্ণ;obviate:দূর করা",[[0,"The __ assistant flattered his boss constantly.","তোষামুদে সহকারী সবসময় বসের তোষামোদ করত।"],[1,"Paying the huge debt was an __ task.","বিশাল ঋণ শোধ করা ছিল এক কষ্টকর কাজ।"]]],
+["pedantic:খুঁতধরা পুঁথিগত;perfidious:বিশ্বাসঘাতক;pervasive:সর্বব্যাপী;plethora:প্রাচুর্য",[[1,"The __ friend betrayed her trust.","বিশ্বাসঘাতক বন্ধুটি তার আস্থা নষ্ট করল।"],[3,"The shop offers a __ of choices.","দোকানটি প্রচুর বিকল্প দেয়।"]]],
+["precarious:অনিশ্চিত/বিপজ্জনক;prevaricate:ঘুরিয়ে বলা;pristine:অকলুষিত;prodigal:অপব্যয়ী",[[0,"The climber was in a __ position on the cliff.","পর্বতারোহী খাড়া পাহাড়ে বিপজ্জনক অবস্থানে ছিল।"],[3,"The __ son wasted all his inheritance.","অপব্যয়ী ছেলে সব উত্তরাধিকার উড়িয়ে দিল।"]]],
+["propensity:প্রবণতা;pungent:ঝাঁঝালো;recluse:নির্জনবাসী;quibble:তুচ্ছ তর্ক",[[1,"The __ smell of onions filled the kitchen.","পেঁয়াজের ঝাঁঝালো গন্ধে রান্নাঘর ভরে গেল।"],[2,"The old man lived like a __ in the forest.","বৃদ্ধ লোকটি বনে নির্জনবাসীর মতো থাকত।"]]],
+["refute:খণ্ডন করা;rescind:বাতিল করা;salubrious:স্বাস্থ্যকর;sanguine:আশাবাদী",[[1,"The government decided to __ the order.","সরকার আদেশটি বাতিল করার সিদ্ধান্ত নিল।"],[3,"She remained __ about her chances.","সে নিজের সম্ভাবনা নিয়ে আশাবাদী রইল।"]]],
+["tedious:ক্লান্তিকর;tenuous:ক্ষীণ/দুর্বল;venerate:শ্রদ্ধা করা;supersede:স্থলাভিষিক্ত হওয়া",[[1,"The link between the two events is __.","দুটি ঘটনার সংযোগ খুবই ক্ষীণ।"],[2,"Many people __ their teachers.","অনেক মানুষ তাদের শিক্ষকদের শ্রদ্ধা করে।"]]],
+["zealot:গোঁড়া অনুরাগী;zenith:চূড়া;chary:সতর্ক;welter:জট/বিশৃঙ্খলা",[[1,"The sun reached its __ at noon.","দুপুরে সূর্য তার সর্বোচ্চ বিন্দুতে পৌঁছাল।"],[3,"A __ of emotions overwhelmed her.","আবেগের এক জট তাকে আচ্ছন্ন করল।"]]]
+];
+const bn=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
+let ok=0,tot=0;const sc=document.getElementById("sc"),app=document.getElementById("app");
+const upd=()=>sc.textContent="সঠিক: "+ok+" / "+tot+" (মোট ৪৬)";upd();
+D.forEach((s,i)=>{
+ const W=s[0].split(";").map(x=>x.split(":"));
+ const sec=document.createElement("div");sec.className="sec";
+ sec.innerHTML="<h2>সেকশন "+bn(i+1)+"</h2><div class='wl'>"+W.map(w=>w[0]+" = "+w[1]).join(" · ")+"</div>";
+ s[1].forEach(q=>{
+  const d=document.createElement("div");d.className="q";
+  d.innerHTML="<div class='s'>"+q[1].replace("__","_______")+"</div>";
+  W.map((w,k)=>[w,k]).sort(()=>Math.random()-.5).forEach(([w,k])=>{
+   const b=document.createElement("button");b.className="o";
+   b.innerHTML=w[0]+" <small>— "+w[1]+"</small>";
+   b.onclick=()=>{
+    if(d.classList.contains("done"))return;
+    d.classList.add("done");tot++;
+    if(k==q[0]){ok++;b.classList.add("ok")}else{b.classList.add("no")}
+    [...d.querySelectorAll(".o")].forEach(x=>{if(x.firstChild.textContent.trim()==W[q[0]][0])x.classList.add("ok")});
+    upd();
+   };
+   d.appendChild(b);
+  });
+  const t=document.createElement("div");t.className="tr";t.textContent="অর্থ: "+q[2];d.appendChild(t);
+  sec.appendChild(d);
+ });
+ app.appendChild(sec);
+});
+</script></body></html>
